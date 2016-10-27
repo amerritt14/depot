@@ -11,8 +11,10 @@
   <div id="banner">
     <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
     <span class="title"><%= @page_title %>
-      <% if @count > 5 %>
-        Count: <%= @count %>
+      <% if session[:counter] %>
+        <% if session[:counter] > 5 %>
+          Count: <%= @count %>
+        <% end %>
       <% end %>
     </span>
   </div>
