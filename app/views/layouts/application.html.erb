@@ -10,7 +10,13 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
     <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
-    <span class="title"><%= @page_title %></span>
+    <span class="title"><%= @page_title %>
+      <% if session[:counter] %>
+        <% if session[:counter] > 5 %>
+          Count: <%= @count %>
+        <% end %>
+      <% end %>
+    </span>
   </div>
   <div id="columns">
     <div id="side">
